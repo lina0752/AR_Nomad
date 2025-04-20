@@ -1,5 +1,7 @@
 import { Link } from "wouter";
 import PatternDivider from "@/components/patterns/PatternDivider";
+import NaturaImage from '../pictures/natura.jpeg';
+import BuranaVideo from '../videos/burana.mp4';
 
 const Home = () => {
   const features = [
@@ -25,10 +27,10 @@ const Home = () => {
       {/* Hero Section */}
       <header id="home" className="relative bg-[#1A3A63] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1570654231374-9294e3dfbd2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-            alt="Kyrgyzstan mountain landscape" 
-            className="w-full h-full object-cover opacity-40"
+        <img 
+           src={NaturaImage} 
+           alt="Mountain lake in Kyrgyzstan" 
+           className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
           />
         </div>
         <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
@@ -77,34 +79,35 @@ const Home = () => {
 
       <PatternDivider />
 
-      {/* Burana Tower Preview */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <img 
-                src="https://images.unsplash.com/photo-1625470793672-577d77cb50be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                alt="Burana Tower" 
-                className="w-full h-auto rounded-lg shadow-xl"
-              />
-            </div>
-            <div className="md:w-1/2">
-              <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-[#1A3A63] mb-6">Burana Tower: Our First AR Project</h2>
-              <p className="mb-4">
-                The Burana Tower, located near the town of Tokmok in northern Kyrgyzstan, is one of the country's most significant historical monuments. This ancient minaret dates back to the 10th century and was part of the ancient city of Balasagun.
-              </p>
-              <p className="mb-4">
-                Our AR reconstruction showcases how this fortress complex evolved over centuries, from its glory days as a bustling Silk Road city to its current state as an archaeological site.
-              </p>
-              
-              <Link href="/burana-tower" className="inline-block bg-[#C75D3A] hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
+  <div className="container mx-auto px-4">
+    <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="md:w-1/2">
+        <video 
+          src={BuranaVideo} 
+          className="w-full h-auto rounded-lg shadow-xl" 
+          controls 
+          muted 
+          autoPlay 
+          loop
+        />
+      </div>
+      <div className="md:w-1/2">
+        <h2 className="font-['Montserrat'] font-bold text-3xl md:text-4xl text-[#1A3A63] mb-6">Burana Tower: Our First AR Project</h2>
+        <p className="mb-4">
+          The Burana Tower, located near the town of Tokmok in northern Kyrgyzstan, is one of the country's most significant historical monuments. This ancient minaret dates back to the 10th century and was part of the ancient city of Balasagun.
+        </p>
+        <p className="mb-4">
+          Our AR reconstruction showcases how this fortress complex evolved over centuries, from its glory days as a bustling Silk Road city to its current state as an archaeological site.
+        </p>
+        
+        <Link href="/burana-tower" className="inline-block bg-[#C75D3A] hover:bg-opacity-90 text-white font-bold py-3 px-6 rounded-md transition-all transform hover:scale-105">
+          Learn More
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
       <PatternDivider />
 
       {/* Gallery Preview */}
