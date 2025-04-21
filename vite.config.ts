@@ -20,5 +20,5 @@ export default defineConfig({
     outDir: path.resolve(__dirname, 'dist'),
     emptyOutDir: true,
   },
-  base: '/AR_Nomad/', // Имя репозитория
+  base: './', // для Vercel или любого хостинга без подпапки
 });
